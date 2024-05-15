@@ -26,15 +26,78 @@ Step 6: Display message give in MainActivity file.
 Step 7: Save and run the application.
 
 ## PROGRAM:
-
+```
 /*
 Program to print the text “Hello World”.
-Developed by: gunupati dheeraj
-Registeration Number : 212221040050
+Developed by:B.mothish kumar
+Registeration Number :212221040027
 */
+```
+MAIN ACTIVITY-XML
+```
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QWERTY"
+        android:textAlignment="center"
+        android:textColor="#4CAF50"
+        android:textColorHighlight="#03A9F4"
+        android:textColorLink="#F44336"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:text="abc"
+        android:textAlignment="center"
+        android:textColor="#F44336"
+        android:textColorHighlight="#03A9F4"
+        android:textColorLink="#F44336"
+        android:textSize="39sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:text="def"
+        android:textAlignment="center"
+        android:textColor="#673AB7"
+        android:textColorHighlight="#9C27B0"
+        android:textColorLink="#F44336"
+        android:textSize="39sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+MAIN ACTIVITY-JAVA
+```
+package com.example.myapplication_1;
 
 import android.os.Bundle;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,78 +105,81 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast toast = Toast.makeText(getApplicationContext(), "onCreate Called", Toast.LENGTH_LONG);
-        toast.show();
-    }
-    protected void onStart() {
-        super.onStart();
-        Toast toast = Toast.makeText(getApplicationContext(), "onStart Called", Toast.LENGTH_LONG);
-        toast.show();
+        Toast.makeText(MainActivity.this,"CREATED",Toast.LENGTH_SHORT).show();
     }
     @Override
-
-    protected void onRestart() {
-        super.onRestart();
-        Toast toast = Toast.makeText(getApplicationContext(), "onRestart Called", Toast.LENGTH_LONG);
-        toast.show();
-
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(MainActivity.this,"STARt",Toast.LENGTH_SHORT).show();
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(MainActivity.this,"RESUME",Toast.LENGTH_SHORT).show();
+    }
+    @Override
     protected void onPause() {
         super.onPause();
-        Toast toast = Toast.makeText(getApplicationContext(), "onPause Called", Toast.LENGTH_LONG);
-        toast.show();
-
+        Toast.makeText(MainActivity.this,"P",Toast.LENGTH_SHORT).show();
     }
-    protected void onResume(){
-        super.onResume();
-        Toast toast = Toast.makeText(getApplicationContext(), "onResume Called", Toast.LENGTH_LONG);
-        toast.show();
-
-    }
+    @Override
     protected void onStop() {
         super.onStop();
-        Toast toast = Toast.makeText(getApplicationContext(), "onStop Called", Toast.LENGTH_LONG);
-        toast.show();
-
+        Toast.makeText(MainActivity.this,"Stop",Toast.LENGTH_SHORT).show();
     }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(MainActivity.this,"Restart",Toast.LENGTH_SHORT).show();
+    }
+    @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast toast = Toast.makeText(getApplicationContext(), "onDestroy Called", Toast.LENGTH_LONG);
-        toast.show();
-
+        Toast.makeText(MainActivity.this,"Destroy",Toast.LENGTH_SHORT).show();
     }
 }
+```
+COLORS-XML
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
+
+ANDROID MANIFEST-XML
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication1"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
 
 
 ## OUTPUT
-
-![Screenshot (81)](https://github.com/KayyuruTharani/lifecyclemethods/assets/142209319/d5ad46bc-1465-456a-9cf3-d8e3f94c8eae)
-
-![Screenshot (82)](https://github.com/KayyuruTharani/lifecyclemethods/assets/142209319/2006d2ad-0051-4427-9d51-650b6cb39d8c)
-
-![Screenshot (84)](https://github.com/KayyuruTharani/lifecyclemethods/assets/142209319/cbe15bc8-62d5-4c21-9e97-783d6b2216c0)
-
-![Screenshot (66)](https://github.com/KayyuruTharani/lifecyclemethods/assets/142209319/0914167e-ec9a-4831-a64b-58da70413c2e)
-
-![Screenshot (87)](https://github.com/KayyuruTharani/lifecyclemethods/assets/142209319/4f6aabbf-5352-48c1-aa83-400252741ca6)
-
-![Screenshot (85)](https://github.com/KayyuruTharani/lifecyclemethods/assets/142209319/f482e7b7-1132-471e-8a78-aa6aa8415d01)
-
-![Screenshot (86)](https://github.com/KayyuruTharani/lifecyclemethods/assets/142209319/10ef6e61-d7f4-40b2-a817-f863e06ea9c9)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/21005290/lifecyclemethods/assets/112933246/737da8e0-177a-4958-81d4-28cf3e2b7f71)
+![image](https://github.com/21005290/lifecyclemethods/assets/112933246/909dc09b-15bc-47c4-a534-550c222a12c5)
 
 
 
